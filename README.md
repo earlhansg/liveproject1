@@ -30,4 +30,3 @@
 - We will then form an object class for the specific page
 - We are going to create 8 objet classes for each page involved to place an order on the test store (test1)
 - We will then reuse some page objects to test adding and the removal of a product from the test store basket (test2)
-- 
