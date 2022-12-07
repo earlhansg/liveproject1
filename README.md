@@ -1,11 +1,3 @@
 # TestNG Tutorial with MAVEN
 
-## Installation (MVN REPO)
-- Selenium Java
-- TestNG
-- Apache Commons IO
-
-## Added
-- Created BasePage.java under "base" directory
-- Imported drivers under "drivers" directory
-- Created screenshots folder under "target" directory
+<img src="https://github.com/earlhansg/liveproject1/blob/T3-TestClasses/images/1.png" style=" width:60px ; height:60px "  >
