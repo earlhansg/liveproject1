@@ -1,11 +1,14 @@
 # TestNG Tutorial with MAVEN
 
-## Installation (MVN REPO)
-- Selenium Java
-- TestNG
-- Apache Commons IO
+## Page Object Classes
 
-## Added
-- Created BasePage.java under "base" directory
-- Imported drivers under "drivers" directory
-- Created screenshots folder under "target" directory
+## What We Did ?
+- Create page object classes of Homepage.java under pageObjects directory
+- Create page object classes of OrderFormDelivery.java under pageObjects directory
+- Create page object classes of OrderFormPayment.java under pageObjects directory
+- Create page object classes of OrderFormPersInfo.java under pageObjects directory
+- Create page object classes of OrderFormShippingMethod.java under pageObjects directory
+- Create page object classes of ShopContentPanel.java under pageObjects directory
+- Create page object classes of ShopHomepage.java under pageObjects directory
+- Create page object classes of ShoppingCart.java under pageObjects directory
+- Create page object classes of ShopProductPage.java under pageObjects directory
