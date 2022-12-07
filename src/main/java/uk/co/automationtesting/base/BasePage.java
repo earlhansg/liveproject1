@@ -24,7 +24,7 @@ public class BasePage {
 	public BasePage() throws IOException {
 		prop = new Properties();
 		FileInputStream data = new FileInputStream(
-				System.getProperty("user.dir") + "\\src\\test\\java\\uk\\co\\automationtesting\\config.properties");
+				System.getProperty("user.dir") + "\\src\\main\\java\\uk\\co\\automationtesting\\resources\\config.properties");
 		prop.load(data);
 	}
 
@@ -32,15 +32,15 @@ public class BasePage {
 		
 		if (prop.getProperty("browser").equals("chrome")) {
 			System.setProperty("webdriver.chrome.driver",
-				System.getProperty("user.dir") + "\\src\\test\\java\\uk\\co\\automationtesting\\drivers\\chromedriver.exe");
+				System.getProperty("user.dir") + "\\src\\main\\java\\uk\\co\\automationtesting\\drivers\\chromedriver.exe");
 			driver = new ChromeDriver();
 		} else if (prop.getProperty("browser").equals("firefox")) {
 			System.setProperty("webdriver.chrome.driver",
-				System.getProperty("user.dir") + "\\src\\test\\java\\uk\\co\\automationtesting\\drivers\\geckodriver.exe");
+				System.getProperty("user.dir") + "\\src\\main\\java\\uk\\co\\automationtesting\\drivers\\geckodriver.exe");
 			driver = new FirefoxDriver();
 		} else {
 			System.setProperty("webdriver.chrome.driver",
-				System.getProperty("user.dir") + "\\src\\test\\java\\uk\\co\\automationtesting\\drivers\\msedgedriver.exe");
+				System.getProperty("user.dir") + "\\src\\main\\java\\uk\\co\\automationtesting\\drivers\\msedgedriver.exe");
 			driver = new EdgeDriver();
 		}
 
