@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import uk.co.automationtesting.base.BasePage;
@@ -17,6 +18,8 @@ import uk.co.automationtesting.pageObjects.ShopContentPanel;
 import uk.co.automationtesting.pageObjects.ShopHomepage;
 import uk.co.automationtesting.pageObjects.ShopProductPage;
 import uk.co.automationtesting.pageObjects.ShoppingCart;
+
+@Listeners(uk.co.automationtesting.resources.Listeners.class)
 
 public class AddRemoveItemBasketTest extends BasePage {
 
@@ -75,7 +78,7 @@ public class AddRemoveItemBasketTest extends BasePage {
 		System.out.println(cart.getTotalAmount().getText());
 		
 		// using an assertion to make sure the total amount is what we are expecting
-		Assert.assertEquals(cart.getTotalAmount().getText(), "$45.24");
+		Assert.assertEquals(cart.getTotalAmount().getText(), "$45.25");
 
 	}
 

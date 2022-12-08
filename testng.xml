@@ -5,11 +5,13 @@
     <classes>
       <class name="uk.co.automationtesting.AddRemoveItemBasketTest"/>
     </classes>
-  </test> <!-- Test -->
-  
+  </test> 
+  <!-- Test -->
   <test thread-count="5" name="Test2">
     <classes>
       <class name="uk.co.automationtesting.OrderCompleteTest"/>
     </classes>
-  </test> <!-- Test -->  
-</suite> <!-- Suite -->
+  </test> 
+  <!-- Test -->  
+</suite>
+<!-- Suite -->
