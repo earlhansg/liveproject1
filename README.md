@@ -35,3 +35,6 @@ public class BasePage {
 - A thread is a unit of execution and so multiple threads can execute the same code at the same time
 - So, if two threads (e.g. tests) are executing the same code, and the code has a reference to the same ThreadLocal variable, the two threads cannot see each others variables
 - This can resolve the "static WebDriver" issue where resources are currently being shared (confusing our tests)
+
+<img src="https://github.com/earlhansg/liveproject1/blob/T7-ParallelExecution/images/ss1.png" style=" width:100% ; height:100% "  >
+<img src="https://github.com/earlhansg/liveproject1/blob/T7-ParallelExecution/images/ss2.png" style=" width:100% ; height:100% "  >
