@@ -4,9 +4,7 @@ import java.io.IOException;
 import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -66,7 +64,7 @@ public class AddRemoveItemBasketTest extends Hooks {
 		System.out.println(cart.getTotalAmount().getText());
 		
 		// using an assertion to make sure the total amount is what we are expecting
-		Assert.assertEquals(cart.getTotalAmount().getText(), "$45.25");
+		Assert.assertEquals(cart.getTotalAmount().getText(), "$45.24");
 
 	}
 
