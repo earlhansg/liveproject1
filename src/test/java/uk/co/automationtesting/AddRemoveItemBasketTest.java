@@ -60,8 +60,7 @@ public class AddRemoveItemBasketTest extends Hooks {
 		cart.getDeleteItemTwo().click();
 
 		// using a wait to ensure the deletion has taken place
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(120));
-		wait.until(ExpectedConditions.invisibilityOf(cart.getDeleteItemTwo()));
+		waitForElementInvisible(cart.getDeleteItemTwo(), Duration.ofSeconds(120));
 
 		// printing the total amount to console
 		System.out.println(cart.getTotalAmount().getText());
