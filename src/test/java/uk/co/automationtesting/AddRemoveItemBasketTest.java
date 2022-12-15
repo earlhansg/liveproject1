@@ -3,16 +3,15 @@ package uk.co.automationtesting;
 import java.io.IOException;
 import java.time.Duration;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import uk.co.automationtesting.base.BasePage;
+import uk.co.automationtesting.base.Hooks;
 import uk.co.automationtesting.pageObjects.Homepage;
 import uk.co.automationtesting.pageObjects.ShopContentPanel;
 import uk.co.automationtesting.pageObjects.ShopHomepage;
@@ -21,45 +20,35 @@ import uk.co.automationtesting.pageObjects.ShoppingCart;
 
 @Listeners(uk.co.automationtesting.resources.Listeners.class)
 
-public class AddRemoveItemBasketTest extends BasePage {
+public class AddRemoveItemBasketTest extends Hooks {
+	public WebDriver driver;
 
 	public AddRemoveItemBasketTest() throws IOException {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	@BeforeTest
-	public void setup() throws IOException {
-		driver = getDriver();
-		driver.get(getUrl());
-	}
-
-	@AfterTest
-	public void tearDown() {
-		driver.close();
-		driver = null;
-	}
-
 	@Test
-	public void addRemoveItem() {
+	public void addRemoveItem() throws IOException {
+		this.driver = getDriver();
 		// creating an object of the automationtesting.co.uk webpage
-		Homepage home = new Homepage(driver);
+		Homepage home = new Homepage();
 		home.getTestStoreLink().click();
 
 		// creating an object of the test store homepage
-		ShopHomepage shopHome = new ShopHomepage(driver);
+		ShopHomepage shopHome = new ShopHomepage();
 		shopHome.getProdOne().click();
 
 		// creating an object of the shop products page (when a product has been
 		// selected)
-		ShopProductPage shopProd = new ShopProductPage(driver);
+		ShopProductPage shopProd = new ShopProductPage();
 		Select option = new Select(shopProd.getSizeOption());
 		option.selectByVisibleText("M");
 		shopProd.getQuantIncrease().click();
 		shopProd.getAddToCartBtn().click();
 
 		// creating an object of the cart content panel (once an item was added)
-		ShopContentPanel cPanel = new ShopContentPanel(driver);
+		ShopContentPanel cPanel = new ShopContentPanel();
 		cPanel.getContinueShopBtn().click();
 		shopProd.getHomepageLink().click();
 		shopHome.getProdTwo().click();
@@ -67,7 +56,7 @@ public class AddRemoveItemBasketTest extends BasePage {
 		cPanel.getCheckoutBtn().click();
 
 		// creating an object for the shopping cart page and deleting item 2
-		ShoppingCart cart = new ShoppingCart(driver);
+		ShoppingCart cart = new ShoppingCart();
 		cart.getDeleteItemTwo().click();
 
 		// using a wait to ensure the deletion has taken place
