@@ -30,6 +30,14 @@ public class BasePage {
 - We need to produce a way so that our tests "understand" to use their own driver object
 - We are going to also use this opportunity to improve our overall framework design
 
+## TRYING TO RUN PARALLEL EXECUTION WITH OUR CURRENT CODE
+- Update testng to execute parallel
+<img src="https://github.com/earlhansg/liveproject1/blob/T7-ParallelExecution/images/ss3.png" style=" width:100% ; height:100% "  >
+- Errors
+<img src="https://github.com/earlhansg/liveproject1/blob/T7-ParallelExecution/images/ss4.png" style=" width:100% ; height:100% "  >
+<img src="https://github.com/earlhansg/liveproject1/blob/T7-ParallelExecution/images/ss5.png" style=" width:100% ; height:100% "  >
+<img src="https://github.com/earlhansg/liveproject1/blob/T7-ParallelExecution/images/ss6.png" style=" width:100% ; height:100% "  >
+
 ## WHAT IS THREAD LOCAL?
 - The Java ThreadLocal class enables you to create variables that can only be read and written by the same thread
 - A thread is a unit of execution and so multiple threads can execute the same code at the same time
