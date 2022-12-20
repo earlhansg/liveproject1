@@ -33,6 +33,7 @@ public class BasePage {
 ## TRYING TO RUN PARALLEL EXECUTION WITH OUR CURRENT CODE
 - Update testng to execute parallel
 <img src="https://github.com/earlhansg/liveproject1/blob/T7-ParallelExecution/images/ss3.png" style=" width:100% ; height:100% "  >
+
 - Errors
 <img src="https://github.com/earlhansg/liveproject1/blob/T7-ParallelExecution/images/ss4.png" style=" width:100% ; height:100% "  >
 <img src="https://github.com/earlhansg/liveproject1/blob/T7-ParallelExecution/images/ss5.png" style=" width:100% ; height:100% "  >
