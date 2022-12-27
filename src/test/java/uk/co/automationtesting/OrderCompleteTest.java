@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
+import uk.co.automationtesting.base.ExtentManager;
 import uk.co.automationtesting.base.Hooks;
 import uk.co.automationtesting.pageObjects.Homepage;
 import uk.co.automationtesting.pageObjects.OrderFormDelivery;
@@ -25,20 +26,28 @@ public class OrderCompleteTest extends Hooks {
 	@Test
 	public void endToEndTest() throws InterruptedException, IOException {
 
+		ExtentManager.log("Starting OrderCompleteTest...");
+
 		// creating an object of the automationtesting.co.uk webpage
 		Homepage home = new Homepage();
 		home.getTestStoreLink().click();
+		ExtentManager.pass("Have successfully reached store homepage");
 
 		// creating an object of the test store homepage
 		ShopHomepage shopHome = new ShopHomepage();
 		shopHome.getProdOne().click();
+		ExtentManager.pass("Have successfully clicked on product");
 
 		// creating an object of the shop products page (when a product has been selected)
 		ShopProductPage shopProd = new ShopProductPage();
+		ExtentManager.pass("Have successfully reached shop product page");
 		Select option = new Select(shopProd.getSizeOption());
 		option.selectByVisibleText("M");
+		ExtentManager.pass("Have successfully selected product size");
 		shopProd.getQuantIncrease().click();
+		ExtentManager.pass("Have successfully increased quantity");
 		shopProd.getAddToCartBtn().click();
+		ExtentManager.pass("Have successfully added item to cart");
 
 		// creating an object of the cart content panel (once an item was added)
 		ShopContentPanel cPanel = new ShopContentPanel();
@@ -46,7 +55,9 @@ public class OrderCompleteTest extends Hooks {
 
 		// creating an object of the shopping cart page (all items selected)
 		ShoppingCart cart = new ShoppingCart();
+		ExtentManager.pass("Have successfully reached the shopping cart page");
 		cart.getHavePromo().click();
+		ExtentManager.pass("Have successfully selected the promo button");
 		cart.getPromoTextbox().sendKeys("20OFF");
 		cart.getPromoAddBtn().click();
 		cart.getProceedCheckoutBtn().click();
@@ -59,6 +70,7 @@ public class OrderCompleteTest extends Hooks {
 		pInfo.getEmailField().sendKeys("johnsmith77@test.com");
 		pInfo.getTermsConditionsCheckbox().click();
 		pInfo.getContinueBtn().click();
+		ExtentManager.pass("Have successfully entered customer details");
 
 		// creating an object of the order delivery info page
 		OrderFormDelivery orderDelivery = new OrderFormDelivery();
@@ -68,17 +80,20 @@ public class OrderCompleteTest extends Hooks {
 		state.selectByVisibleText("Texas");
 		orderDelivery.getPostcodeField().sendKeys("77021");
 		orderDelivery.getContinueBtn().click();
+		ExtentManager.pass("Have successfully entered delivery info");
 
 		// creating an object of the shipping method page
 		OrderFormShippingMethod shipMethod = new OrderFormShippingMethod();
 		shipMethod.getDeliveryMsgTextbox().sendKeys("If I am not in, please leave my delivery on my porch.");
 		shipMethod.getContinueBtn().click();
+		ExtentManager.pass("Have successfully selected the shipping method");
 
 		// creating an object of the payment options page
 		OrderFormPayment orderPay = new OrderFormPayment();
 		orderPay.getPayByCheckRadioBtn().click();
 		orderPay.getTermsConditionsCheckbox().click();
 		orderPay.getOrderBtn().click();
+		ExtentManager.pass("Have successfully placed order");
 	}
 
 }
