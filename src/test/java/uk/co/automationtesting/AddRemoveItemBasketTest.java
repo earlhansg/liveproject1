@@ -30,7 +30,6 @@ public class AddRemoveItemBasketTest extends Hooks {
 	@Test
 	public void addRemoveItem() throws IOException {
 		ExtentManager.log("Starting AddRemoveItemBasketTest...");
-		this.driver = getDriver();
 		// creating an object of the automationtesting.co.uk webpage
 		Homepage home = new Homepage();
 		home.getTestStoreLink().click();
@@ -69,7 +68,7 @@ public class AddRemoveItemBasketTest extends Hooks {
 
 		// printing the total amount to console
 		System.out.println(cart.getTotalAmount().getText());
-		
+
 		try {
 			// using an assertion to make sure the total amount is what we are expecting
 			Assert.assertEquals(cart.getTotalAmount().getText(), "$45.23");

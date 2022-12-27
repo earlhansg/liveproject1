@@ -17,7 +17,7 @@ public class Listeners extends BasePage implements ITestListener {
 
 	public synchronized void onStart(ITestContext context) {
 		ExtentManager.getReport();
-		ExtentManager.createTest(context.getHost(), context.getName());
+		ExtentManager.createTest(context.getName(), context.getName());
 
 	}
 

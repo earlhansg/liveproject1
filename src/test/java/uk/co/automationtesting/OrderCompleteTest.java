@@ -3,6 +3,7 @@ package uk.co.automationtesting;
 import java.io.IOException;
 
 import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import uk.co.automationtesting.base.ExtentManager;
@@ -16,6 +17,8 @@ import uk.co.automationtesting.pageObjects.ShopContentPanel;
 import uk.co.automationtesting.pageObjects.ShopHomepage;
 import uk.co.automationtesting.pageObjects.ShopProductPage;
 import uk.co.automationtesting.pageObjects.ShoppingCart;
+
+@Listeners(uk.co.automationtesting.resources.Listeners.class)
 
 public class OrderCompleteTest extends Hooks {
 
