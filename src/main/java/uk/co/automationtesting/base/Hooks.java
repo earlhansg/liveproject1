@@ -11,7 +11,7 @@ public class Hooks extends BasePage {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
+	// initialization with the driver then proceed to get URL right away since it was extended to BasePage
 	@BeforeTest
 	public void setup() throws IOException {
 		getDriver().get(getUrl());
