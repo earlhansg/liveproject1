@@ -20,6 +20,8 @@ public class Listeners extends BasePage implements ITestListener {
 		 * context.getName() = TestNGTest-543cb7be-8441-4356-a570-cbafc09f1dd7
 		 * how about use this context.getClass().getName() to get the name of the class your listening ex. "OrderCompleteTest"
 		 * sothat our report html has clear info about the test we're running
+		 * or move ExtentManager.createTest() method in every test created by specific class ex. ExtentManager.createTest("Order Complete Test", "decription")
+		 * reference link https://www.lambdatest.com/blog/extent-reports-in-selenium/
 		 */
 		ExtentManager.getReport();
 		ExtentManager.createTest(context.getName(), context.getName());
