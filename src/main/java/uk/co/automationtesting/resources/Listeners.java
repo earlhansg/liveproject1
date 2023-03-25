@@ -18,6 +18,8 @@ public class Listeners extends BasePage implements ITestListener {
 	public synchronized void onStart(ITestContext context) {
 		/*
 		 * context.getName() = TestNGTest-543cb7be-8441-4356-a570-cbafc09f1dd7
+		 * how about use this context.getClass().getName() to get the name of the class your listening ex. "OrderCompleteTest"
+		 * sothat our report html has clear info about the test we're running
 		 */
 		ExtentManager.getReport();
 		ExtentManager.createTest(context.getName(), context.getName());
